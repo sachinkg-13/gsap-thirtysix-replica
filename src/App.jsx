@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Circ, Expo } from "gsap/all";
+import CircularText from "./CircularText";
 
 function App() {
   const [showCanvas, setShowCanvas] = useState(false);
@@ -92,27 +93,36 @@ function App() {
               ))}
             </div>
           </nav>
-          <div className="textcontainer  w-full px-[20%]">
-            <div className="text w-[50%]">
-              <h3 className="text-4xl leading-[1.2]">
-                At Thirtysixstudio, we build immersive digital experiences for
-                brands with a purpose.
-              </h3>
-              <p className="text-lg w-[80%] mt-10 font-normal">
-                We are a team of designers, developers, and strategists who are
-                passionate about creating digital experiences that are both
-                beautiful and functional.
-              </p>
-              <p className="text-md mt-10">scroll</p>
+
+          <div className="flex">
+            <div className="w-2/3  ml-20">
+              {" "}
+              <div className="textcontainer  w-full px-[20%]">
+                <div className="text w-[70%]">
+                  <h3 className="text-4xl leading-[1.2]">
+                    At Thirtysixstudio, we build immersive digital experiences
+                    for brands with a purpose.
+                  </h3>
+                  <p className="text-lg w-full mt-10 font-normal">
+                    We are a team of designers, developers, and strategists who
+                    are passionate about creating digital experiences that are
+                    both beautiful and functional.
+                  </p>
+                  <p className="text-md mt-10">scroll</p>
+                </div>
+              </div>
+              <div className="w-full absolute bottom-0 left-0">
+                <h1
+                  ref={headingref}
+                  className="text-[17rem] font-normal tracking-tight leading-none pl-5"
+                >
+                  Thirtysixstudios
+                </h1>
+              </div>
             </div>
-          </div>
-          <div className="w-full absolute bottom-0 left-0">
-            <h1
-              ref={headingref}
-              className="text-[17rem] font-normal tracking-tight leading-none pl-5"
-            >
-              Thirtysixstudios
-            </h1>
+            <div className="w-1/3 text-black mr-20 mb-5">
+              <CircularText />
+            </div>
           </div>
         </div>
       </div>
@@ -139,3 +149,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
